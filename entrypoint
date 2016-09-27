@@ -148,4 +148,4 @@ if [ -d /etc/sftp.d ]; then
     unset f
 fi
 
-exec /usr/sbin/sshd -D -e
+/usr/sbin/sshd -D -e
