@@ -25,6 +25,12 @@ RUN apt-get update && \
     mkdir -p /var/run/sshd && \
     rm -f /etc/ssh/ssh_host_*key*
 
+RUN curl -sS https://getcomposer.org/installer | php
+RUN php composer.phar require phpmailer/phpmailer:~5.2
+
+RUN sed -e 's/^listen = .*/listen = 9000/' -i /etc/php5/fpm/pool.d/www.conf \
+	&& sed -e 's/^;security\.limit_extensions = .*/security\.limit_extensions = \.php \.php3 \.php4 \.php5 \.phtml/' -i /etc/php5/fpm/pool.d/www.conf
+
 COPY sshd_config /etc/ssh/sshd_config
 COPY entrypoint /
 
