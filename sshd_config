@@ -15,5 +15,8 @@ PermitRootLogin no
 X11Forwarding no
 AllowTcpForwarding no
 
+PrintLastLog yes
+time[d-H:M]
+ 
 # Enable this for more logs
 #LogLevel VERBOSE
