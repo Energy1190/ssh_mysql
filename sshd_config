@@ -15,6 +15,7 @@ PermitRootLogin no
 X11Forwarding no
 AllowTcpForwarding no
 
+Subsystem sftp internal-sftp
 PrintLastLog yes
  
 # Enable this for more logs
