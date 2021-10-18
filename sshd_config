@@ -13,7 +13,8 @@ ChallengeResponseAuthentication no
 # Limited access
 PermitRootLogin no
 X11Forwarding no
-AllowTcpForwarding no
+AllowTcpForwarding yes
+PermitOpen any
 
 Subsystem sftp internal-sftp
 PrintLastLog yes
